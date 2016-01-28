@@ -5,6 +5,9 @@
     <title>HTML Academy: Барбершоп</title>
   </head>
   <body>
+    <!-- 
+      Ошибки по header, footer смотри в index.html
+     -->
   	<header class="main-header">
   		<div class="container">
   			<nav class="main-navigation">
@@ -29,6 +32,9 @@
   			</div>
   		</div>
   	</header>
+    <!-- 
+      Смотри замечания по main, заголовкам, хлебным крошкам в item.html
+     -->
   	<main class="container">
   		<h1>ПРАЙС-ЛИСТ</h1>
   		<ul class="breadcrumbs">
@@ -40,6 +46,44 @@
   			</li>
   		</ul>
   		<div class="price-title">ИСТИННО МУЖСКАЯ КЛАССИКА</div>
+      
+
+      <!-- 
+        
+        Ниже не совсем правильно распределил все по колонкам
+        Суть такая, что у тебя есть две колонки
+        1. МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
+        2. ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
+
+        И только потом идет текст Несколько слов о нас который тоже разбит на колонки
+
+        Поэтому разметка должна быть
+
+        <section class="price-content"> - вот тут как раз правильно использовать section, потому что 
+          <div class="price-content-leftCol">
+            МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
+          </div>
+          <div class="price-content-rightCol">
+            ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
+          </div>
+        </section>
+
+        <section class="price-content">
+          Заголовок НЕСКОЛЬКО СЛОВ О НАС:
+          <div class="price-content-leftCol">
+            Текст о нас левая колонка
+          </div>
+          <div class="price-content-rightCol">
+            Текст о нас правая колонка
+          </div>
+        </section>      
+
+        Это все нужно и необходимо для того, что если изменится контент в средствах или таблица станет больше по высоте, текст в блоке "Несколько слов о нас" был всегда на одном уровне
+        В твоем варианте он будет не ясно как
+
+       -->
+
+
   		<div class="price-content left">
   			<h2 class="price-content-title">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
   			</h2>

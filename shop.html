@@ -5,6 +5,9 @@
     <title>HTML Academy: Барбершоп</title>
   </head>
   <body>
+    <!-- 
+      Ошибки по header, footer, main смотри в index.html
+     -->
   	<header class="main-header">
   		<div class="container">
   			<nav class="main-navigation">
@@ -43,6 +46,65 @@
   			<li class="active">Средства для ухода</li>
   		</ul>
   		<aside class="shop-filter">
+        <!--
+            То что ты использовал форму это отлично и правильно
+            Все checbox, radio оформлены верно
+            Но ты не пердусматриваешь никакую разметку, чтобы тебе потом было проще
+
+            Смотри, нам нужно чтобы между Baxter of California и Mr Natty снизу был определенный раздел
+            Между блоками производители и группы товаров тоже
+
+            Если посмотреть на форму, то можно увидеть что у нас
+            Блок производители
+                Заголовок
+                Список производителей
+
+            Таким образом уже появляется доп разметка, которую легко стилизовать
+
+            <div class="filters-group">
+                <h2 class="описал как назвать классы для заголовков в item.html">Производители</h2>
+                <ul class="filters-list">
+                    <li>
+                        смотри замечания по контролам ниже
+                    </li>
+                </ul>
+            </div>
+
+            Теперь по поводу чекбоксов и радио-кнопок
+            Смотри, они у нас нестандартные, в связи с этим нужно использовать "особую разметку"
+            
+            К чекбоксам есть подписи, которые у тебя никак не оформлены (Я сейчас про тексты типа  "Baxter of California")
+            Для этого у нас есть спец тег label
+            label нужен для подписи к формам, по спецификации его можно использовать двумя способами
+
+            1. 
+                <label>
+                    <input type="radio" value="baxter of california">
+                    Baxter of california
+                </label>
+            2.
+                <input id="manufacturer-1" type="radio" value="baxter of california">
+                <label for="manufacturer-1">Baxter of california</label>
+    
+            Плюс label в том, что если ты правильно указываешь в for id элемента (вообще аттрибут for, при использовании лейбла отдельно обязателен)
+            во всех браузерах происходит клик по элементу с id
+            Возможно, я чуть путанно написал, но суть такая
+             - Есть input с id="manufacturer-1"
+             - Если label с аттрибутом for="manufacturer-1"
+             - По клику на label, браузер ищет input с id = аттрибуту for этого label. То есть в нашем примере браузер ищет id="manufacturer-1"
+             - Если браузер его находит, то он сам ставит фокус на найденный элемент (в случае с элементами формы = клику по ним)
+
+            Поэтому, для оформления кастомных чекбоксов и радио кнопок это идеальный способ
+            Мы сможем обойтись без JavaScript и сделать работу чекбоксов только на CSS (В CSS есть псевдокласс :checked)
+            
+
+            В итоге, нужно объединить 2 разметки что выше и доделать форму по аналогии
+
+            input type="submit" все правильно, его оставить внутри формы
+
+
+
+        -->
   			<form action="">
   				<h2>ПРОИЗВОДИТЕЛИ</h2>
   				<input type="checkbox" name="Baxter of California"><label>Baxter of California</label>
@@ -59,9 +121,13 @@
   				<button type="submit">ПОКАЗАТЬ</button>
   			</form>
   		</aside>
+      <!-- 
+        Все article + paginator лучше обернуть в доп div который будет отвечать за правую колонку
+       -->
   		<article class="shop-item">
   			<img src="" alt="Набор для путешествий «Baxter of California»" class="shop-item-image" width="220" height="165">
   			<div class="shop-item-title">Набор для путешествий «Baxter of California»</div>
+        <!-- описал как стилизовать блок с ценой в item.html -->
   			<div class="shop-item-price">2 900 РУБ.
   				<a href="#" class="shop-item-buy">КУПИТЬ</a>
   			</div>
@@ -101,6 +167,8 @@
   				<a href="#" class="shop-item-buy">КУПИТЬ</a>
   			</div>
   		</article>
+
+      <!-- Тебе явно не нужна тут section, а класс paginator можно было бы использовать прям на ul -->
   		<section class="paginator">
   			<ul>
   				<li><a href="#" class="paginator-btn">1</a></li>
