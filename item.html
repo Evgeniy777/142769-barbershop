@@ -13,19 +13,21 @@
   			<nav class="main-navigation">
           <!-- Для ссылки нужно добавить активный класс. Мы находимся сейчас в пункте Магазин -->
   				<ul>
-  					<li><a href="">Информация</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Новости</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Прайс-лист</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Магазин</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Контакты</a></li>
+  					<li>
+  					    <a href="#">Информация</a>
+  					</li>
+  					<li>
+                <a href="#">Новости</a>
+            </li>
+  				  <li>
+  				      <a href="#">Прайс-лист</a>
+  		      </li>
+  				  <li>
+                <a href="#" class="active">Магазин</a>
+            </li>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
   				</ul>
   			</nav>
   			<div class="user-block">
@@ -43,7 +45,8 @@
       </main>
 
      -->
-  	<main class="container">
+  	<main class="main-content">
+        <div class="container">
       <!--
         Чтобы стили заголовков можно было легко переиспользовать
         Можно (и лучше) привести все к одним классам
@@ -62,20 +65,17 @@
 
         Это поможет нам использовать разные теги, но одно и тоже оформление
       -->
-  		<h1>набор для путешествий «Baxter of California»</h1>
+  		<h1 class="barbershop-title-h1">Набор для путешествий «Baxter of California»</h1>
   		<ul class="breadcrumbs">
   			<li>
   				<a href="#">Главная</a>
           <!-- Элемент divider тебе не очень нужен, мы сможем его добавить с помощью css. В будущем расмотрим как, поэтому элемент лучше убрать -->
-  				<span class="divider"></span> 
   			</li>
   			<li>
   				<a href="#">Магазин</a>
-  				<span class="divider"></span>
   			</li>
   			<li>
   				<a href="#">Средства для ухода</a>
-  				<span class="divider"></span>
   			</li>
   			<li class="active">набор для путешествий «Baxter of California»				 </li>
   		</ul>
@@ -101,8 +101,8 @@
         </div>
 
        -->
-
-  		<section class="item-gallery">
+			<div class="item">
+  			<div class="item-gallery">
         <!-- 
           Тут разметка недостаточна для того, чтобы сделать ее рабочей в будущем
 
@@ -126,8 +126,8 @@
   			<img src="" alt="набор для путешествий «Baxter of California»" width="140" height="149">
   			<img src="" alt="набор для путешествий «Baxter of California»" width="140" height="149">
   			<img src="" alt="набор для путешествий «Baxter of California»" width="140" height="149">
-  		</section>
-  		<section class="item-description">
+  		</div>
+  		<div class="item-description">
 
         <!-- 
           item-description должен закрываться только после того, как в этой колонке будут содержаться все блоки
@@ -146,13 +146,13 @@
             <span class="item-params-identifier">Артикул: dexter-ae</span>
           </div>
          -->
-  			<span class="availability">Есть в наличии</span>
-  			<span class="identifier">Артикул: dexter-ae</span>
-        
+  			<div class="item-params">
+					<span class="availability">Есть в наличии</span>
+					<span class="identifier">Артикул: dexter-ae</span>
+				</div>
         <!-- Лучше подправить текст и убрать лишние пробелы и тп -->
-  			<p>Travel Kit – необходимый аксессуар во время любого 										путешествия. В аккуратной кожаной сумке находится все, что
-  					нужно для бритья и ухода за кожей во время рабочей поездки 							или отдыха: средство для умывания, увлажняющий крем, крем 						для бритья, крем после бритья, шампунь. Набор также может 						стать отличным подарком.</p>
-  		</section>
+  			<p>Travel Kit – необходимый аксессуар во время любого	путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может стать отличным подарком.</p>
+  		
 
       <!-- 
         Блок item-price используется не только на странице item, но и в каталоге
@@ -164,43 +164,60 @@
         Я бы советовал использовать подобную разметку для блока цена+купить
 
         <div class="price">
-          <span class="price-value">2 900 РУБ.</span>
+          <span class="price-value">2 900 руб.</span>
           <a href="#" class="item-buy">Купить</a>
         </div>  
        -->
-  		<section class="item-price">2 900 РУБ.
-  			<a href="#" class="item-buy">КУПИТЬ</a>  			
-  		</section>
-      <!-- В целом неплохо, можно оставить, но я бы добавил для заголовка абстрактный класс (выше писал об этом) и для списков кстати тоже бы сделал такой класс -->
-  		<section class="item-features">
-  			<h2>В набор входят:</h2>
-  			<ul>
-  				<li>Средство для умывания (50 мл)</li>
-  				<li>Увлажняющий крем (50 мл)</li>
-  				<li>Крем для бритья (50 мл)</li>
-  				<li>Крем после бритья, шампунь (50 мл)</li>
-  				<li>Удобная кожаная косметичка</li>  		
-  			</ul>
-  		</section>
+						<div class="price">
+								<span class="price-value">2 900 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+						<!-- В целом неплохо, можно оставить, но я бы добавил для заголовка абстрактный класс (выше писал об этом) и для списков кстати тоже бы сделал такой класс -->
+						<div class="item-features">
+							<h2 class="barbershop-title-h2">В набор входят:</h2>
+							<ul class="barbershop-list">
+								<li>Средство для умывания (50 мл)</li>
+								<li>Увлажняющий крем (50 мл)</li>
+								<li>Крем для бритья (50 мл)</li>
+								<li>Крем после бритья, шампунь (50 мл)</li>
+								<li>Удобная кожаная косметичка</li>  		
+							</ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
   	</main>
   	<footer class="main-footer">
   		<div class="container">
-  			<section class="footer-contacts">
-  				БАРБЕРШОП «БОРОДИНСКИЙ»<br>
-					АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8<br>
-					<a href="#">КАК НАС НАЙТИ?</a><br>
-					ТЕЛЕФОН: +7 (495) 666-02-66	
-  			</section>
-  			<section class="footer-social">
-  				<p>Давайте дружить!</p>
+  			<div class="footer-contacts">
+        <!-- 
+          Ошибка с section описана выше
+          Оставляя просто текст, тебе сложно будет его потом оформлять. Весь текст лучше обернуть в параграф
+         -->
+  				<p>Барбершоп «Бородинский»<br>
+							Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+							<a href="#">как нас найти?</a><br>
+							Телефон: +7 (495) 666-02-66
+					</p>	 
+  			</div>
+  			<div class="footer-social">
+          <!-- 
+          <p> - то есть параграф лучше использовать для больших объемов текста. У нас же тут что-то среднее между текстом и заголовком, поэтому лучше использовать просто div
+          Обрати внимание что "Давайте дружить" и "Разработано" имеют общее оформление, поэтому лучше использовать для него еще и класс
+
+          То есть твоя разметка должна быть
+
+          <div class="footer-title">Давайте дружить!</div>
+           -->
+  				<div class="footer-title">Давайте дружить!</div> 
   				<a href="" class="social-btn social-btn-vk">Вконтакте</a>
   				<a href="" class="social-btn social-btn-fb">Фейсбук</a>
   				<a href="" class="social-btn social-btn-inst">Инстаграм</a>
-  			</section>
-  			<section class="footer-copyright">
-  				<p>Разработано:</p>
+  			</div>
+  			<div class="footer-copyright">
+  				<div class="footer-title">Разработано:</div>
   				<a href="#" class="btn">HTML Academy</a>
-  			</section>
+  			</div>
   		</div>
   	</footer>
   </body>

@@ -11,20 +11,41 @@
   	<header class="main-header">
   		<div class="container">
   			<nav class="main-navigation">
+          <!-- 
+            Не совсем ясно, зачем делать такое большое кол-во списков?
+            Список должен быть один, это же одно меню
+
+            То есть разметка ниже должна выглядеть вот так
+            <ul>
+              <li>
+                <a href="">Информация</a>
+              </li>  
+              <li>
+                <a href="">Новости</a>
+              </li>
+            </ul>
+
+            Обрати внимание также и на оформление кода
+            Если ты все вложенные теги размещаешь везде с новой строки, то и в меню тоже также должно быть, не должно быть разницы в оформлении
+            
+            Женя: сорри. это я с emmet перемудрил, экспериментировал с формулами
+           -->
   				<ul>
-  					<li><a href="">Информация</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Новости</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Прайс-лист</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Магазин</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Контакты</a></li>
+  					<li>
+  					    <a href="#">Информация</a>
+  					</li>
+  					<li>
+                <a href="#">Новости</a>
+            </li>
+  				  <li>
+  				      <a href="#">Прайс-лист</a>
+  		      </li>
+  				  <li>
+                <a href="#">Магазин</a>
+            </li>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
   				</ul>
   			</nav>
   			<div class="user-block">
@@ -32,170 +53,222 @@
   			</div>
   		</div>
   	</header>
-  	<main class="container">
-  		<h1>СРЕДСТВА ДЛЯ УХОДА</h1>
-  		<ul class="breadcrumbs">
-  			<li>
-  				<a href="#">Главная</a>
-  				<span class="divider"></span>
-  			</li>
-  			<li>
-  				<a href="#">Магазин</a>
-  				<span class="divider"></span>
-  			</li>
-  			<li class="active">Средства для ухода</li>
-  		</ul>
-  		<aside class="shop-filter">
-        <!--
-            То что ты использовал форму это отлично и правильно
-            Все checbox, radio оформлены верно
-            Но ты не пердусматриваешь никакую разметку, чтобы тебе потом было проще
+  	<main class="main-content">
+			<div class="container">
+				<h1 class="barbershop-title-h1">СРЕДСТВА ДЛЯ УХОДА</h1>
+				<ul class="breadcrumbs">
+					<li>
+						<a href="#">Главная</a>
+					</li>
+					<li>
+						<a href="#">Магазин</a>
+					</li>
+					<li class="active">Средства для ухода</li>
+				</ul>
+				<aside class="shop-filter">
+					<!--
+							То что ты использовал форму это отлично и правильно
+							Все checbox, radio оформлены верно
+							Но ты не пердусматриваешь никакую разметку, чтобы тебе потом было проще
 
-            Смотри, нам нужно чтобы между Baxter of California и Mr Natty снизу был определенный раздел
-            Между блоками производители и группы товаров тоже
+							Смотри, нам нужно чтобы между Baxter of California и Mr Natty снизу был определенный раздел
+							Между блоками производители и группы товаров тоже
 
-            Если посмотреть на форму, то можно увидеть что у нас
-            Блок производители
-                Заголовок
-                Список производителей
+							Если посмотреть на форму, то можно увидеть что у нас
+							Блок производители
+									Заголовок
+									Список производителей
 
-            Таким образом уже появляется доп разметка, которую легко стилизовать
+							Таким образом уже появляется доп разметка, которую легко стилизовать
 
-            <div class="filters-group">
-                <h2 class="описал как назвать классы для заголовков в item.html">Производители</h2>
-                <ul class="filters-list">
-                    <li>
-                        смотри замечания по контролам ниже
-                    </li>
-                </ul>
-            </div>
+							<div class="filters-group">
+									<h2 class="описал как назвать классы для заголовков в item.html">Производители</h2>
+									<ul class="filters-list">
+											<li>
+													смотри замечания по контролам ниже
+											</li>
+									</ul>
+							</div>
 
-            Теперь по поводу чекбоксов и радио-кнопок
-            Смотри, они у нас нестандартные, в связи с этим нужно использовать "особую разметку"
-            
-            К чекбоксам есть подписи, которые у тебя никак не оформлены (Я сейчас про тексты типа  "Baxter of California")
-            Для этого у нас есть спец тег label
-            label нужен для подписи к формам, по спецификации его можно использовать двумя способами
+							Теперь по поводу чекбоксов и радио-кнопок
+							Смотри, они у нас нестандартные, в связи с этим нужно использовать "особую разметку"
 
-            1. 
-                <label>
-                    <input type="radio" value="baxter of california">
-                    Baxter of california
-                </label>
-            2.
-                <input id="manufacturer-1" type="radio" value="baxter of california">
-                <label for="manufacturer-1">Baxter of california</label>
-    
-            Плюс label в том, что если ты правильно указываешь в for id элемента (вообще аттрибут for, при использовании лейбла отдельно обязателен)
-            во всех браузерах происходит клик по элементу с id
-            Возможно, я чуть путанно написал, но суть такая
-             - Есть input с id="manufacturer-1"
-             - Если label с аттрибутом for="manufacturer-1"
-             - По клику на label, браузер ищет input с id = аттрибуту for этого label. То есть в нашем примере браузер ищет id="manufacturer-1"
-             - Если браузер его находит, то он сам ставит фокус на найденный элемент (в случае с элементами формы = клику по ним)
+							К чекбоксам есть подписи, которые у тебя никак не оформлены (Я сейчас про тексты типа  "Baxter of California")
+							Для этого у нас есть спец тег label
+							label нужен для подписи к формам, по спецификации его можно использовать двумя способами
 
-            Поэтому, для оформления кастомных чекбоксов и радио кнопок это идеальный способ
-            Мы сможем обойтись без JavaScript и сделать работу чекбоксов только на CSS (В CSS есть псевдокласс :checked)
-            
+							1. 
+									<label>
+											<input type="radio" value="baxter of california">
+											Baxter of california
+									</label>
+							2.
+									<input id="manufacturer-1" type="radio" value="baxter of california">
+									<label for="manufacturer-1">Baxter of california</label>
 
-            В итоге, нужно объединить 2 разметки что выше и доделать форму по аналогии
+							Плюс label в том, что если ты правильно указываешь в for id элемента (вообще аттрибут for, при использовании лейбла отдельно обязателен)
+							во всех браузерах происходит клик по элементу с id
+							Возможно, я чуть путанно написал, но суть такая
+							 - Есть input с id="manufacturer-1"
+							 - Если label с аттрибутом for="manufacturer-1"
+							 - По клику на label, браузер ищет input с id = аттрибуту for этого label. То есть в нашем примере браузер ищет id="manufacturer-1"
+							 - Если браузер его находит, то он сам ставит фокус на найденный элемент (в случае с элементами формы = клику по ним)
 
-            input type="submit" все правильно, его оставить внутри формы
+							Поэтому, для оформления кастомных чекбоксов и радио кнопок это идеальный способ
+							Мы сможем обойтись без JavaScript и сделать работу чекбоксов только на CSS (В CSS есть псевдокласс :checked)
 
 
+							В итоге, нужно объединить 2 разметки что выше и доделать форму по аналогии
 
-        -->
-  			<form action="">
-  				<h2>ПРОИЗВОДИТЕЛИ</h2>
-  				<input type="checkbox" name="Baxter of California"><label>Baxter of California</label>
-  				<input type="checkbox" name="Mr Natty"><label>Mr Natty</label>
-  				<input type="checkbox" name="Suavecito"><label>Suavecito</label>
-  				<input type="checkbox" name="Malin+Goetz"><label>Malin+Goetz</label>
-  				<input type="checkbox" name="Murray’s"><label>Murray’s</label>
-  				<input type="checkbox" name="American Crew"><label>American Crew</label>
-  				<h2>ГРУППЫ ТОВАРОВ</h2>
-  				<input type="radio" name="" id=""><label>Бритвенные 
-принадлежности</label>
-  				<input type="radio" name="" id=""><label>Средства для ухода</label>
-  				<input type="radio" name="" id=""><label>Аксессуары</label>
-  				<button type="submit">ПОКАЗАТЬ</button>
-  			</form>
-  		</aside>
-      <!-- 
-        Все article + paginator лучше обернуть в доп div который будет отвечать за правую колонку
-       -->
-  		<article class="shop-item">
-  			<img src="" alt="Набор для путешествий «Baxter of California»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Набор для путешествий «Baxter of California»</div>
-        <!-- описал как стилизовать блок с ценой в item.html -->
-  			<div class="shop-item-price">2 900 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
-  		<article class="shop-item">
-  			<img src="" alt="Увлажняющий кондиционер «Baxter of California»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Увлажняющий кондиционер «Baxter of California»</div>
-  			<div class="shop-item-price">750 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
-  		<article class="shop-item">
-  			<img src="" alt="Гель для волос «SUAVECITO»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Гель для волос «SUAVECITO»</div>
-  			<div class="shop-item-price">290 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
-  		<article class="shop-item">
-  			<img src="" alt="Глина для укладки волос «American crew»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Глина для укладки волос «American crew»</div>
-  			<div class="shop-item-price">500 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
-  		<article class="shop-item">
-  			<img src="" alt="Гель для волос «AMERICAN CREW»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Гель для волос «AMERICAN CREW»</div>
-  			<div class="shop-item-price">300 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
-  		<article class="shop-item">
-  			<img src="" alt="Набор для бритья «Baxter of California»" class="shop-item-image" width="220" height="165">
-  			<div class="shop-item-title">Набор для бритья «Baxter of California»</div>
-  			<div class="shop-item-price">3 900 РУБ.
-  				<a href="#" class="shop-item-buy">КУПИТЬ</a>
-  			</div>
-  		</article>
+							input type="submit" все правильно, его оставить внутри формы
 
-      <!-- Тебе явно не нужна тут section, а класс paginator можно было бы использовать прям на ul -->
-  		<section class="paginator">
-  			<ul>
-  				<li><a href="#" class="paginator-btn">1</a></li>
-					<li class="active">2</li>
-					<li><a href="#" class="paginator-btn">3</a></li>
-					<li><a href="#" class="paginator-btn">4</a></li>
-  			</ul>
-  			</section>
+
+
+					-->
+					<form action="">
+						<div class="filters-group">
+							<h2 class="barbershop-title-h2">ПРОИЗВОДИТЕЛИ</h2>
+							<ul class="filters-list">
+								<li>
+									<input id="manufacturer-1" type="checkbox" value="Baxter of California">
+									<label for="manufacturer-1">Baxter of California</label>
+								</li>
+								<li>
+									<input id="manufacturer-2" type="checkbox" value="Mr Natty">
+									<label for="manufacturer-2">Mr Natty</label>
+								</li>
+								<li>
+									<input id="manufacturer-3" type="checkbox" value="Suavecito">
+									<label for="manufacturer-3">Suavecito</label>
+								</li>
+								<li>
+									<input id="manufacturer-4" type="checkbox" value="Malin+Goetz">
+									<label for="manufacturer-4">Malin+Goetz</label>
+								</li>
+								<li>
+									<input id="manufacturer-5" type="checkbox" value="Murray’s">
+									<label for="manufacturer-5">Murray’s</label>
+								</li>
+								<li>
+									<input id="manufacturer-6" type="checkbox" value="American Crew">
+									<label for="manufacturer-6">American Crew</label>
+								</li>
+							</ul>
+						</div>
+						<div class="filters-group">
+							<h2 class="barbershop-title-h2">Группы товаров</h2>
+							<ul class="filters-list">
+								<li>
+									<input id="group-1" type="radio" value="Бритвенные принадлежности">
+									<label for="group-1">Бритвенные принадлежности</label>
+								</li>
+								<li>
+									<input id="group-2" type="radio" value="Средства для ухода">
+									<label for="group-2">Средства для ухода</label>
+								</li>
+								<li>
+									<input id="group-3" type="radio" value="Аксессуары">
+									<label for="group-3">Аксессуары</label>
+								</li>
+							</ul>
+						</div>
+						<button type="submit">Показать</button>
+					</form>
+				</aside>
+				<!-- 
+					Все article + paginator лучше обернуть в доп div который будет отвечать за правую колонку
+				 -->
+				<div class="shop-catalog">
+					<article class="shop-item">
+						<img src="" alt="Набор для путешествий «Baxter of California»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Набор для путешествий «Baxter of California»</div>
+						<!-- описал как стилизовать блок с ценой в item.html -->
+						<div class="price">
+								<span class="price-value">2 900 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<article class="shop-item">
+						<img src="" alt="Увлажняющий кондиционер «Baxter of California»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Увлажняющий кондиционер «Baxter of California»</div>
+						<div class="price">
+								<span class="price-value">750 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<article class="shop-item">
+						<img src="" alt="Гель для волос «SUAVECITO»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Гель для волос «SUAVECITO»</div>
+						<div class="price">
+								<span class="price-value">290 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<article class="shop-item">
+						<img src="" alt="Глина для укладки волос «American crew»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Глина для укладки волос «American crew»</div>
+						<div class="price">
+								<span class="price-value">500 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<article class="shop-item">
+						<img src="" alt="Гель для волос «AMERICAN CREW»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Гель для волос «AMERICAN CREW»</div>
+						<div class="price">
+								<span class="price-value">300 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<article class="shop-item">
+						<img src="" alt="Набор для бритья «Baxter of California»" class="shop-item-image" width="220" height="165">
+						<div class="shop-item-title">Набор для бритья «Baxter of California»</div>
+						<div class="price">
+								<span class="price-value">3 900 руб.</span>
+								<a href="#" class="item-buy">Купить</a>
+						</div> 
+					</article>
+					<!-- Тебе явно не нужна тут section, а класс paginator можно было бы использовать прям на ul -->
+					<ul class="paginator">
+						<li><a href="#" class="paginator-btn">1</a></li>
+						<li class="paginator-btn-active">2</li>
+						<li><a href="#" class="paginator-btn">3</a></li>
+						<li><a href="#" class="paginator-btn">4</a></li>
+					</ul>
+				</div>
+			</div>
   	</main>
   	<footer class="main-footer">
   		<div class="container">
-  			<section class="footer-contacts">
-  				БАРБЕРШОП «БОРОДИНСКИЙ»<br>
-					АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8<br>
-					<a href="#">КАК НАС НАЙТИ?</a><br>
-					ТЕЛЕФОН: +7 (495) 666-02-66	
-  			</section>
-  			<section class="footer-social">
-  				<p>Давайте дружить!</p>
-  				<a href="#" class="social-btn social-btn-vk">Вконтакте</a>
-  				<a href="#" class="social-btn social-btn-fb">Фейсбук</a>
-  				<a href="#" class="social-btn social-btn-inst">Инстаграм</a>
-  			</section>
-  			<section class="footer-copyright">
-  				<p>Разработано:</p>
+  			<div class="footer-contacts">
+        <!-- 
+          Ошибка с section описана выше
+          Оставляя просто текст, тебе сложно будет его потом оформлять. Весь текст лучше обернуть в параграф
+         -->
+  				<p>Барбершоп «Бородинский»<br>
+							Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+							<a href="#">как нас найти?</a><br>
+							Телефон: +7 (495) 666-02-66
+					</p>	 
+  			</div>
+  			<div class="footer-social">
+          <!-- 
+          <p> - то есть параграф лучше использовать для больших объемов текста. У нас же тут что-то среднее между текстом и заголовком, поэтому лучше использовать просто div
+          Обрати внимание что "Давайте дружить" и "Разработано" имеют общее оформление, поэтому лучше использовать для него еще и класс
+
+          То есть твоя разметка должна быть
+
+          <div class="footer-title">Давайте дружить!</div>
+           -->
+  				<div class="footer-title">Давайте дружить!</div> 
+  				<a href="" class="social-btn social-btn-vk">Вконтакте</a>
+  				<a href="" class="social-btn social-btn-fb">Фейсбук</a>
+  				<a href="" class="social-btn social-btn-inst">Инстаграм</a>
+  			</div>
+  			<div class="footer-copyright">
+  				<div class="footer-title">Разработано:</div>
   				<a href="#" class="btn">HTML Academy</a>
-  			</section>
+  			</div>
   		</div>
   	</footer>
   </body>

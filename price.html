@@ -11,20 +11,41 @@
   	<header class="main-header">
   		<div class="container">
   			<nav class="main-navigation">
+          <!-- 
+            Не совсем ясно, зачем делать такое большое кол-во списков?
+            Список должен быть один, это же одно меню
+
+            То есть разметка ниже должна выглядеть вот так
+            <ul>
+              <li>
+                <a href="">Информация</a>
+              </li>  
+              <li>
+                <a href="">Новости</a>
+              </li>
+            </ul>
+
+            Обрати внимание также и на оформление кода
+            Если ты все вложенные теги размещаешь везде с новой строки, то и в меню тоже также должно быть, не должно быть разницы в оформлении
+            
+            Женя: сорри. это я с emmet перемудрил, экспериментировал с формулами
+           -->
   				<ul>
-  					<li><a href="">Информация</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Новости</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Прайс-лист</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Магазин</a></li>
-  				</ul>
-  				<ul>
-  					<li><a href="">Контакты</a></li>
+  					<li>
+  					    <a href="#">Информация</a>
+  					</li>
+  					<li>
+                <a href="#">Новости</a>
+            </li>
+  				  <li>
+  				      <a href="#">Прайс-лист</a>
+  		      </li>
+  				  <li>
+                <a href="#">Магазин</a>
+            </li>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
   				</ul>
   			</nav>
   			<div class="user-block">
@@ -35,12 +56,12 @@
     <!-- 
       Смотри замечания по main, заголовкам, хлебным крошкам в item.html
      -->
-  	<main class="container">
-  		<h1>ПРАЙС-ЛИСТ</h1>
+  	<main class="main-content">
+  		<div class="container">
+  		<h1 class="barbershop-title-h1">ПРАЙС-ЛИСТ</h1>
   		<ul class="breadcrumbs">
   			<li>
   				<a href="#">Главная</a>
-  				<span class="divider"></span>
   			</li>
   			<li class="active">Прайс-лист
   			</li>
@@ -82,64 +103,84 @@
         В твоем варианте он будет не ясно как
 
        -->
-
-
-  		<div class="price-content left">
-  			<h2 class="price-content-title">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
-  			</h2>
- 				<ul>
- 					<li>Baxter of California</li>
- 					<li>Mr Natty</li>
- 					<li>Suavecito</li>
- 					<li>Malin+Goetz</li>
- 				</ul>
-				<h2 class="price-content-title">НЕСКОЛЬКО СЛОВ О НАС:</h2>
- 				<p>Наша парикмахерская занимается исключительно мужскими 
+			 <section class="price-content"> - вот тут как раз правильно использовать section, потому что 
+          <div class="price-content-leftCol">
+            <h2 class="barbershop-title-h2">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:</h2>
+ 						<ul class="barbershop-list">
+							<li>Baxter of California</li>
+							<li>Mr Natty</li>
+							<li>Suavecito</li>
+							<li>Malin+Goetz</li>
+						</ul>
+          </div>
+          <div class="price-content-rightCol">
+            <h2 class="barbershop-title-h2">ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:</h2>
+						<table>
+							<tr>
+								<td>Стрижка</td>
+								<td>1500 Р.</td>
+							</tr>
+							<tr>
+								<td>Стрижка бороды</td>
+								<td>500 Р.</td>
+							</tr>
+							<tr>
+								<td>Накрутка усов</td>
+								<td>350 Р.</td>
+							</tr>
+						</table>
+          </div>
+        </section>
+        <section class="price-content">
+          <h2 class="barbershop-title-h2">НЕСКОЛЬКО СЛОВ О НАС:</h2>
+          <div class="price-content-leftCol">
+            <p>Наша парикмахерская занимается исключительно мужскими 
  						стрижками. Стрижка каждого клиента для нас - это уникальная
  						и продуманная до мелочей работа. Мы не работаем на количество,
- 						мы делаем качество.</p>
-  		</div>
-  		<div class="price-content right">
-  			<h2 class="price-content-title">ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
-				</h2>
-				<table>
-					<tr>
-						<td>Стрижка</td>
-						<td>1500 Р.</td>
-					</tr>
-					<tr>
-						<td>Стрижка бороды</td>
-						<td>500 Р.</td>
-					</tr>
-					<tr>
-						<td>Накрутка усов</td>
-						<td>350 Р.</td>
-					</tr>
-				</table>
-				<p>Наша мастерская расположена в центре города, поэтому
+ 						мы делаем качество.
+        		</p>
+          </div>
+          <div class="price-content-rightCol">
+            <p>Наша мастерская расположена в центре города, поэтому
 						сделать стильную стрижку можно в любое время, даже в
 						обеденный перерыв. Здесь вы можете погрузиться в удобную
-						для вас атмосферу, чувствовать себя комфортно и свободно!</p>
-  		</div>
+						для вас атмосферу, чувствовать себя комфортно и свободно!
+         		</p>
+          </div>
+        </section>
+			</div>
   	</main>
   	<footer class="main-footer">
   		<div class="container">
-  			<section class="footer-contacts">
-  				БАРБЕРШОП «БОРОДИНСКИЙ»<br>
-					АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8<br>
-					<a href="#">КАК НАС НАЙТИ?</a><br>
-					ТЕЛЕФОН: +7 (495) 666-02-66	
-  			</section>
-  			<section class="footer-social">
-  				<p>Давайте дружить!</p>
+  			<div class="footer-contacts">
+        <!-- 
+          Ошибка с section описана выше
+          Оставляя просто текст, тебе сложно будет его потом оформлять. Весь текст лучше обернуть в параграф
+         -->
+  				<p>Барбершоп «Бородинский»<br>
+							Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+							<a href="#">как нас найти?</a><br>
+							Телефон: +7 (495) 666-02-66
+					</p>	 
+  			</div>
+  			<div class="footer-social">
+          <!-- 
+          <p> - то есть параграф лучше использовать для больших объемов текста. У нас же тут что-то среднее между текстом и заголовком, поэтому лучше использовать просто div
+          Обрати внимание что "Давайте дружить" и "Разработано" имеют общее оформление, поэтому лучше использовать для него еще и класс
+
+          То есть твоя разметка должна быть
+
+          <div class="footer-title">Давайте дружить!</div>
+           -->
+  				<div class="footer-title">Давайте дружить!</div> 
   				<a href="" class="social-btn social-btn-vk">Вконтакте</a>
   				<a href="" class="social-btn social-btn-fb">Фейсбук</a>
   				<a href="" class="social-btn social-btn-inst">Инстаграм</a>
-  			</section>
-  			<section class="footer-copyright">
-  				<p>Разработано:</p>
+  			</div>
+  			<div class="footer-copyright">
+  				<div class="footer-title">Разработано:</div>
   				<a href="#" class="btn">HTML Academy</a>
-  			</section>
+  			</div>
   		</div>
   	</footer>
   </body>
