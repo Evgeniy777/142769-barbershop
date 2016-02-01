@@ -1,0 +1,131 @@
+header a {
+	font-size: 16px;
+	line-height: 24px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+
+.features-name {
+	font-size: 30px;
+	line-height: 38px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.features-item p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+h2.index-content-title {
+	font-size: 30px;
+	line-height: 38px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.news-preview p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.news-preview time {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+}
+.btn {
+	font-size: 14px;
+	line-height: 24px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.appointment-form input {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+}
+.index-content p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.main-footer p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.main-footer .footer-title {
+	font-size: 14px;
+	line-height: 24px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+
+/*item*/
+.barbershop-title-h1 {
+	font-size: 30px;
+	line-height: 38px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.breadcrumbs {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.barbershop-title-h2 {
+	font-size: 24px;
+	line-height: 32px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+.barbershop-list li {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}
+
+/*Price*/
+.price-title {
+	font-size: 48px;
+	line-height: 56px;
+	color: #000;
+	font-weight: bold;
+	font-family: "PT Sans Narrow";
+	text-transform: uppercase;
+}

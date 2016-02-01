@@ -1,187 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Барбершоп</title>
-  </head>
-  <body>
-    <!-- 
-      Ошибки по header, footer смотри в index.html
-     -->
-  	<header class="main-header">
-  		<div class="container">
-  			<nav class="main-navigation">
-          <!-- 
-            Не совсем ясно, зачем делать такое большое кол-во списков?
-            Список должен быть один, это же одно меню
-
-            То есть разметка ниже должна выглядеть вот так
-            <ul>
-              <li>
-                <a href="">Информация</a>
-              </li>  
-              <li>
-                <a href="">Новости</a>
-              </li>
-            </ul>
-
-            Обрати внимание также и на оформление кода
-            Если ты все вложенные теги размещаешь везде с новой строки, то и в меню тоже также должно быть, не должно быть разницы в оформлении
-            
-            Женя: сорри. это я с emmet перемудрил, экспериментировал с формулами
-           -->
-  				<ul>
-  					<li>
-  					    <a href="#">Информация</a>
-  					</li>
-  					<li>
-                <a href="#">Новости</a>
-            </li>
-  				  <li>
-  				      <a href="#">Прайс-лист</a>
-  		      </li>
-  				  <li>
-                <a href="#">Магазин</a>
-            </li>
-            <li>
-                <a href="#">Контакты</a>
-            </li>
-  				</ul>
-  			</nav>
-  			<div class="user-block">
-  				<a href="#" class="login">Вход</a>
-  			</div>
-  		</div>
-  	</header>
-    <!-- 
-      Смотри замечания по main, заголовкам, хлебным крошкам в item.html
-     -->
-  	<main class="main-content">
-  		<div class="container">
-  		<h1 class="barbershop-title-h1">ПРАЙС-ЛИСТ</h1>
-  		<ul class="breadcrumbs">
-  			<li>
-  				<a href="#">Главная</a>
-  			</li>
-  			<li class="active">Прайс-лист
-  			</li>
-  		</ul>
-  		<div class="price-title">ИСТИННО МУЖСКАЯ КЛАССИКА</div>
-      
-
-      <!-- 
-        
-        Ниже не совсем правильно распределил все по колонкам
-        Суть такая, что у тебя есть две колонки
-        1. МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
-        2. ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
-
-        И только потом идет текст Несколько слов о нас который тоже разбит на колонки
-
-        Поэтому разметка должна быть
-
-        <section class="price-content"> - вот тут как раз правильно использовать section, потому что 
-          <div class="price-content-leftCol">
-            МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
-          </div>
-          <div class="price-content-rightCol">
-            ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
-          </div>
-        </section>
-
-        <section class="price-content">
-          Заголовок НЕСКОЛЬКО СЛОВ О НАС:
-          <div class="price-content-leftCol">
-            Текст о нас левая колонка
-          </div>
-          <div class="price-content-rightCol">
-            Текст о нас правая колонка
-          </div>
-        </section>      
-
-        Это все нужно и необходимо для того, что если изменится контент в средствах или таблица станет больше по высоте, текст в блоке "Несколько слов о нас" был всегда на одном уровне
-        В твоем варианте он будет не ясно как
-
-       -->
-			 <section class="price-content"> - вот тут как раз правильно использовать section, потому что 
-          <div class="price-content-leftCol">
-            <h2 class="barbershop-title-h2">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:</h2>
- 						<ul class="barbershop-list">
-							<li>Baxter of California</li>
-							<li>Mr Natty</li>
-							<li>Suavecito</li>
-							<li>Malin+Goetz</li>
-						</ul>
-          </div>
-          <div class="price-content-rightCol">
-            <h2 class="barbershop-title-h2">ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:</h2>
-						<table>
-							<tr>
-								<td>Стрижка</td>
-								<td>1500 Р.</td>
-							</tr>
-							<tr>
-								<td>Стрижка бороды</td>
-								<td>500 Р.</td>
-							</tr>
-							<tr>
-								<td>Накрутка усов</td>
-								<td>350 Р.</td>
-							</tr>
-						</table>
-          </div>
-        </section>
-        <section class="price-content">
-          <h2 class="barbershop-title-h2">НЕСКОЛЬКО СЛОВ О НАС:</h2>
-          <div class="price-content-leftCol">
-            <p>Наша парикмахерская занимается исключительно мужскими 
- 						стрижками. Стрижка каждого клиента для нас - это уникальная
- 						и продуманная до мелочей работа. Мы не работаем на количество,
- 						мы делаем качество.
-        		</p>
-          </div>
-          <div class="price-content-rightCol">
-            <p>Наша мастерская расположена в центре города, поэтому
-						сделать стильную стрижку можно в любое время, даже в
-						обеденный перерыв. Здесь вы можете погрузиться в удобную
-						для вас атмосферу, чувствовать себя комфортно и свободно!
-         		</p>
-          </div>
-        </section>
-			</div>
-  	</main>
-  	<footer class="main-footer">
-  		<div class="container">
-  			<div class="footer-contacts">
-        <!-- 
-          Ошибка с section описана выше
-          Оставляя просто текст, тебе сложно будет его потом оформлять. Весь текст лучше обернуть в параграф
-         -->
-  				<p>Барбершоп «Бородинский»<br>
-							Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-							<a href="#">как нас найти?</a><br>
-							Телефон: +7 (495) 666-02-66
-					</p>	 
-  			</div>
-  			<div class="footer-social">
-          <!-- 
-          <p> - то есть параграф лучше использовать для больших объемов текста. У нас же тут что-то среднее между текстом и заголовком, поэтому лучше использовать просто div
-          Обрати внимание что "Давайте дружить" и "Разработано" имеют общее оформление, поэтому лучше использовать для него еще и класс
-
-          То есть твоя разметка должна быть
-
-          <div class="footer-title">Давайте дружить!</div>
-           -->
-  				<div class="footer-title">Давайте дружить!</div> 
-  				<a href="" class="social-btn social-btn-vk">Вконтакте</a>
-  				<a href="" class="social-btn social-btn-fb">Фейсбук</a>
-  				<a href="" class="social-btn social-btn-inst">Инстаграм</a>
-  			</div>
-  			<div class="footer-copyright">
-  				<div class="footer-title">Разработано:</div>
-  				<a href="#" class="btn">HTML Academy</a>
-  			</div>
-  		</div>
-  	</footer>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Academy: Барбершоп</title>
+        <link href="http://allfont.ru/allfont.css?fonts=pt-sans-narrow" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-navigation">
+                    <ul>
+                        <li>
+                            <a href="#">Информация</a>
+                        </li>
+                        <li>
+                            <a href="#">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#">Прайс-лист</a>
+                        </li>
+                        <li>
+                            <a href="#">Магазин</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="user-block">
+                    <a href="#" class="login">Вход</a>
+                </div>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                <h1 class="barbershop-title-h1">Прайс-лист</h1>
+                <ul class="breadcrumbs">
+                    <li>
+                        <a href="#">Главная</a>
+                    </li>
+                    <li class="active">Прайс-лист</li>
+                </ul>
+                <div class="price-title">Истинно мужская классика</div>
+                <section class="price-content">
+                    <div class="price-content-leftCol">
+                        <h2 class="barbershop-title-h2">Мы используем только лучшие средства</h2>
+                        <ul class="barbershop-list">
+                            <li>Baxter of California</li>
+                            <li>Mr Natty</li>
+                            <li>Suavecito</li>
+                            <li>Malin+Goetz</li>
+                        </ul>
+                    </div>
+                    <div class="price-content-rightCol">
+                        <h2 class="barbershop-title-h2">Цены на услуги наших мастеров:</h2>
+                        <table>
+                            <tr>
+                                <td>Стрижка</td>
+                                <td>1500 Р.</td>
+                            </tr>
+                            <tr>
+                                <td>Стрижка бороды</td>
+                                <td>500 Р.</td>
+                            </tr>
+                            <tr>
+                                <td>Накрутка усов</td>
+                                <td>350 Р.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section class="price-content">
+                    <h2 class="barbershop-title-h2">Несколько слов о нас:</h2>
+                    <div class="price-content-leftCol">
+                        <p>
+                            Наша парикмахерская занимается исключительно мужскими	стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.
+                        </p>
+                    </div>
+                    <div class="price-content-rightCol">
+                        <p>
+                            Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-contacts">
+                    <p>
+                        Барбершоп «Бородинский»<br>
+                        Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+                        <a href="#">как нас найти?</a><br>
+                        Телефон: +7 (495) 666-02-66
+                    </p>	 
+                </div>
+                <div class="footer-social">
+                    <div class="footer-title">Давайте дружить!</div> 
+                    <a href="" class="social-btn social-btn-vk">Вконтакте</a>
+                    <a href="" class="social-btn social-btn-fb">Фейсбук</a>
+                    <a href="" class="social-btn social-btn-inst">Инстаграм</a>
+                </div>
+                <div class="footer-copyright">
+                    <div class="footer-title">Разработано:</div>
+                    <a href="#" class="btn">HTML Academy</a>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
